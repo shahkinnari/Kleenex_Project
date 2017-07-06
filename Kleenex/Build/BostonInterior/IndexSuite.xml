@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Margento2_TestSuite" verbose="10" parallel="false" thread-count="1">
+
+	<!-- Put IP of localhost/Grid Hub machine -->
+	<parameter name="selenium.host" value="localhost" />
+
+	<!-- Put Port of localhost RC/Grid Hub machine -->
+	<parameter name="selenium.port" value="4444" />
+
+	<!-- Put target browser name as below: 1) Firefox : firefox 2) chrome : 
+		chrome 3) IExplorer : ie8 / ie9 -->
+	<parameter name="selenium.browser" value="chrome" />
+	<!-- <parameter name="selenium.browser" value="iphoneMobile" /> -->
+	
+	<!--  <parameter name="selenium.url" value="http://aamsdev02.cloudapp.net:8082/ProduceAD" /> -->
+ 
+
+		<listeners>
+		<listener class-name="com.Kleenex.Utility.RetryTestListener" />
+		<listener class-name="com.Kleenex.Utility.RetryConterManagerListener" />
+		<listener class-name="com.Kleenex.Utility.CustomReporter" />
+	</listeners>
+
+	
+	
+<test name="TC_1 : Add Simple product from Home page.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+		
+			<class name="com.Kleenex.BostonInteriors.Index.Boston_Index"> 
+				<methods>
+					<include name="AddSimpleProd_HomePage" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="TC_2 :Add Simple product from List Page.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+		
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="AddSimpleprod_ListPage" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+<test name="TC_3 : Add Configurable product from product detail page.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="AddConfigprod_DetailPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+		
+
+		<test name="TC_4 : Add Simple product from Search result page.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="AddSimpleProduct_SearchPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="TC_5 : Add Simple product and Create Account.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="AddSimpleProd_CreateAccount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	 
+	<!-- <test name="TC_3 : Add Configurable product from product detail page.">
+	   <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="AddConfigprod_DetailPage" />
+				</methods>
+			</class>
+		</classes>
+	</test>	 -->
+	 <test name="TC_6 : Combined Product Add to Cart and Checkout.">
+	     <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+		
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="BasePath_AddProduct" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+
+	<!-- 	//For Scenario # 2 For Returning Users -->
+	
+	<test name="TC_7 : Login Before Shopping and Checkout.">
+	     <parameter name="selenium.url" value="http://34.208.59.166/kleenex/customer/account/login/" />
+		<classes>
+		
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="Login_BasePath_Checkout" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+		
+	<test name="TC_8 : Login during the Checkout.">
+	     <parameter name="selenium.url" value="http://34.208.59.166/kleenex/" />
+		<classes>
+		
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="CheckoutTime_BasePath_Login" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	
+	<!-- //For Scenario # 3 New user creation  -->
+	
+	<test name="TC_9 : New Account creation before shopping and Checkout.">
+	     <parameter name="selenium.url" value="http://34.208.59.166/kleenex/customer/account/create/" />
+		<classes>
+		
+			<class name="com.Kleenex.BrandShop.Index.Brandshop_Index"> 
+				<methods>
+					<include name="NewUserCreate_BeforeCheckout" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

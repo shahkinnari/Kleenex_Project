@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<suite name="Magento2_TestSuite" verbose="10" parallel="false" thread-count="1">
+<parameter name="selenium.port" value="4444" />
+<parameter name="selenium.host" value="localhost" />
+
+<listeners>
+<listener class-name="com.Kleenex.Utility.CustomReporter"/>
+<listener class-name="com.Kleenex.Utility.CustomReporter_pass"/>
+</listeners>
+<test name="TC_1 : Add Simple product from Home page."> 
+<parameter name="selenium.url" value="http://34.208.59.166/kleenex/"/>
+<classes>
+<class name="com.Kleenex.BrandShop.Index.Brandshop_Index">
+<methods>
+<include name="AddSimpleProd_HomePage" />
+</methods>
+</class>
+</classes>
+</test>
+</suite>
