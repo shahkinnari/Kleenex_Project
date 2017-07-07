@@ -22,7 +22,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <version.velocity>1.5</version.velocity>
 <failsafe.report>test-output</failsafe.report><!-- target/failsafe-reports/firefox -->
 </properties> 
-<dependencies>
+<dependencies> 
 <!-- <dependency> <groupId>net.sf.opencsv</groupId> <artifactId>opencsv</artifactId>
 <version>2.3</version> </dependency> --> <!-- for reading data from csv -->
 <dependency><groupId>io.appium</groupId><artifactId>java-client</artifactId>
