@@ -955,7 +955,7 @@ import com.Kleenex.BrandShop.Verification.Brandshop_verification;
 import com.Kleenex.Init.Common;
 import com.Kleenex.Init.ITestStatus;
 
-import mx4j.log.Log;
+
 
 import com.Kleenex.Init.AbstractPage;
 
